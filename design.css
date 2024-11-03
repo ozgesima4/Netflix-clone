@@ -1,0 +1,182 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box; /*border-box modelini kullanır, yani padding ve border öğenin toplam genişliğine dahil edilir.*/
+}
+body{
+    background: #000;
+    color: #fff;
+}
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(header-image.png);  /*resimi bir tık siyah filtre ardından gösterme*/
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    position: relative;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2%; 
+}
+.logo{
+    cursor: pointer;
+    width: 150px;
+    
+}
+nav button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;  /*aralarındaki mesafe*/
+    cursor: pointer;
+    padding: 7px 20px;  /*butonların yazıdan uzaklığını belirterek aslında buton boyutu da ayarlanır.*/
+   
+}
+.language-button{
+   
+    border: 1px solid #fff;
+    background: transparent;
+    padding: 5px 10px;
+}
+.language-button img{
+   width: 10px;
+   margin-left: 10px;
+}
+
+.header-content{
+     text-align: center;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%);
+     margin-top: 100px;
+     position: absolute;
+
+}
+.header-content h1{
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    max-width: 750px;
+}
+.header-content h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+
+}
+.sign-in{
+    display:flex;
+    background: #fff;
+    border-radius: 6px;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden; /*taşmayı gizlemek için*/
+}
+.sign-in input{
+    flex: 1%;
+    border: 0;
+    outline: 0;
+    max-width: 400;
+    padding: 10px 20px;
+}
+.sign-in button{
+    background: #db0001;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+.features{
+    padding: 50px 12%;
+    font-size: 22px;
+}
+.row{
+    display: flex;
+    width: auto;
+    align-items: center;
+    flex-wrap: wrap; /**/
+    padding: 50px 0;
+}
+
+.text-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+
+}
+.img-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col img{
+ display: block;
+ width: 90%;
+ margin: auto;
+}
+
+.faq{
+    padding: 10px 12%;
+    font-size: 18px;
+    text-align: center;
+}
+.faq h2{
+    font-size: 40px;
+    font-weight: 500;
+}
+.questions{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+}
+.questions li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+
+}
+.questions li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #696767;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+
+}
+label::after{
+    content: "+";
+    position: absolute;
+    right: 50px;
+    font-size: 32px;
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display: none;
+}
+
+.questions .content{
+    overflow: hidden;
+    padding: 0 20px;
+    background: #696767;
+    max-height: 0; /*gizleme tam da burada yapıldı*/
+    text-align: left;
+    transition: max-height 0.5s, padding 0.5s;
+}
+.questions input[type="radio"]:checked+label+.content{
+    max-height: 450px;
+    padding: 30px 20px;
+}
+.questions input[type="radio"]:checked+label::after{
+    transform: rotate(135deg);
+}
